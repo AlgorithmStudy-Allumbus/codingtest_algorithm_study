@@ -1,7 +1,7 @@
 def solution(s):
     answer = 0
     tmp = []
-    # 1. delete blank in string by using Replace()
+    # 1. delete blank and change type spring to list
     s=s.split() 
     for i in range(len(s)):
         # if z exist, then pop all elements in tmp
