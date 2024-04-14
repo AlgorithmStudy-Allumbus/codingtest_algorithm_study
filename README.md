@@ -62,7 +62,8 @@ git commit -m "[BOJ] Hello World / 브론즈5 / 1분" -m "https://www.acmicpc.ne
   -   왜 이렇게 풀었는지 궁금한 부분
   -   또 다른 풀이 방식 제시
 - 코드의 일부분에다 코드리뷰를 해도 되고 전체 코드 밑 or PR 하나 밑에다 코멘트 작성으로 리뷰를 해도 됩니다.
-
+  
+코드 리뷰 참고 사이트: https://devlog-wjdrbs96.tistory.com/231
 <br />
 <br />
 
