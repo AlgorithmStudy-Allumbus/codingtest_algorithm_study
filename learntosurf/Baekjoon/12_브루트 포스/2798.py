@@ -1,4 +1,3 @@
-```
 # 내 풀이 
 N, M = map(int, input().split())
 nums = list(map(int, input().split()))
@@ -13,4 +12,4 @@ for i in range(N):
             else:
                 sum = max(sum, nums[i] + nums[j] + nums[k])
 print(sum)
-```
+
