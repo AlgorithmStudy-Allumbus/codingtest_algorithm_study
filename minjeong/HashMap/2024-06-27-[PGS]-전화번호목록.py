@@ -9,5 +9,5 @@ def solution(phone_book):
             prefix = number[:i]
             # prefix가 prefixes에 존재하는지 확인한다.
             if prefix in prefixes:
-                return False
-    return True
+                return False # 존재하면 바로 False
+    return True # 모든 번호에 대해 접두어가 발견되지 않는다면 True 반환
