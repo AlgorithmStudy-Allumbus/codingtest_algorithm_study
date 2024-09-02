@@ -50,6 +50,8 @@ def solution(board):
                     tmp.append(((s2[0] ,s2[1] +i) ,s2))
         
         for pset in tmp : # 이웃한 좌표들 중 
-            if pset not in visied : #없으면 
+            if pset not in visited  : #없으면 
                 queue.append((pset , dis+1))
                 visited.add(pset)
+
+d
