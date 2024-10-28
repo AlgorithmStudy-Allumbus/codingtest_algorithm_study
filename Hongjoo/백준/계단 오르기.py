@@ -11,6 +11,7 @@ dp[] : max 값만 넣기
 iteration 2 
 dp[i] : Max(dp[i-1] + step[i] 
 
+## 실패 -> 재도전
 '''
 # input 
 import sys
