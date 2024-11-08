@@ -1,3 +1,5 @@
+## 틀린 풀이 ## 
+
 from itertools import combinations
 from math import comb
 
