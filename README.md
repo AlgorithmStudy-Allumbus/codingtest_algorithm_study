@@ -90,7 +90,7 @@
 | 이름  | 역할  | GitHub ID | 목표 문제 수 | 목표 난이도                       | 시작한 날짜       |
 |-----|-----|-----------|--------------|------------------------------|--------------|
 | 김민정 | 팀장  | [@Mingguriguri](https://github.com/Mingguriguri)  | 5문제        | [PGS] Level 2 / [BOJ] 실버 이상  | 2023.12.20 ~ |
-| 김홍주 | 발제자 | [@zaqquum](https://github.com/zaqquum)  | 3문제        | [PGS] Level 2 / [BOJ] 실버 이상  | 2024.02.01 ~ |
+| 김홍주 | 팀원 | [@zaqquum](https://github.com/zaqquum)  | 3문제        | [PGS] Level 2 / [BOJ] 실버 이상  | 2024.02.01 ~ |
 | 조윤상 | 팀원  | [@YoonYn9915](https://github.com/YoonYn9915)  | 3문제        | [BOJ] 실버 이상                  | 2024.07.01 ~ |
 | 정수미 | 팀원  | [@learntosurf](https://github.com/learntosurf)       | 5문제        | [PGS] Level 1 / [BOJ] 브론즈 이상 | 2024.11.01 ~ |
 
