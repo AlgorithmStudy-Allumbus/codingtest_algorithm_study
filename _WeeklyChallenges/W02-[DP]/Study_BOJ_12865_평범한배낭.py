@@ -1,5 +1,8 @@
-# BOJ #12865. 평범한 배낭 (골드5)
-
+'''
+BOJ #12865. 평범한 배낭 (골드5)
+https://www.acmicpc.net/problem/12865
+유형: Dynamic Programming(DP), Knapsack 
+'''
 import sys
 input = sys.stdin.readline
 
