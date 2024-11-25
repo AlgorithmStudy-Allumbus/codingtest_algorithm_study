@@ -6,7 +6,7 @@
 <img width="800" alt="스크린샷 2024-11-25 오후 9 21 34" src="https://github.com/user-attachments/assets/5e0d93dd-4f45-4405-b0e1-ab9383c36bc1">
 
 ### 📖 문제
-- [백준 #12865. 평범한 배낭]([https://www.acmicpc.net/problem/1522](https://www.acmicpc.net/problem/12865)): DP, 배낭문제 / 골드5
+- [백준 #12865. 평범한 배낭](https://www.acmicpc.net/problem/12865): DP, 배낭문제 / 골드5
 - 정답 코드: [Study_BOJ_12865_평범한배낭.py](https://github.com/AlgorithmStudy-Allumbus/codingtest_algorithm_study/blob/main/_WeeklyChallenges/W02-%5BDP%5D/Study_BOJ_12865_%ED%8F%89%EB%B2%94%ED%95%9C%EB%B0%B0%EB%82%AD.py#L1-L30)
   https://github.com/AlgorithmStudy-Allumbus/codingtest_algorithm_study/blob/bc8ac11b8f5d9d9e8e57baaef984b192b2b03312/_WeeklyChallenges/W02-%5BDP%5D/Study_BOJ_12865_%ED%8F%89%EB%B2%94%ED%95%9C%EB%B0%B0%EB%82%AD.py#L1-L30
 
