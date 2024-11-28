@@ -8,8 +8,8 @@ blocks = input().split()
 dp = [INF] * N
 dp[0] = 0 # 1번 블록에서 출발 
 
-for i in range(1, N):
-    for j in range(i):
+for i in range(1, N): # 목표 블록 (1번 블록 이후부터 N번까지)
+    for j in range(i): # 이전 블록들 (0번부터 i-1번까지 탐색)
         if blocks[j] == 'B' and blocks[i] != 'O':
             continue
         elif blocks[j] == 'O' and blocks[i] != 'J':
