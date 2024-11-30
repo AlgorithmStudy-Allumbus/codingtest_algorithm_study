@@ -1,5 +1,10 @@
 """
+문제 : # 1806부분합
 https://www.acmicpc.net/problem/1806
+
+해설 :
+https://aia1235.tistory.com/46
+
 """
 import sys
 N ,S = map(int, sys.stdin.readline().split())
@@ -17,11 +22,11 @@ while start <= end :
         end += 1 
         if end < N : 
             partial_sum += arr[end]
-        else :  # 수열 끝 -> 조건 충족 x
+        else :  #반복문 끝
             break  
 
 
-if min_length == 100000 : 
+if min_length == 100000 : # 수열 끝 -> 조건 충족 x
     print(0)
 else : 
     print(min_length)
