@@ -1,4 +1,4 @@
-#2024.12.14, 30min
+"""2024.12.14, 30min , #구현"""
 def solution(record):
     answer = []
     # 1. history와 user_db  DB 정의 
