@@ -11,5 +11,5 @@
 - 정답 코드: [Study_BOJ_1700_멀티탭스케줄링.py](./Study_BOJ_1700_멀티탭스케줄링.py)
 
 ### 💻 과제
-- [백준 #1931. 회의실 배정](https://www.acmicpc.net/problem/1931): 그리디, 정렬 / 실버1
+- [백준 #1931. 회의실 배정](https://www.acmicpc.net/problem/1931): 그리디, 정렬 / 골드5
 - 정답 코드: [Assignment_BOJ_1931_회의실배정.py](./Assignment_BOJ_1931_회의실배정.py)
