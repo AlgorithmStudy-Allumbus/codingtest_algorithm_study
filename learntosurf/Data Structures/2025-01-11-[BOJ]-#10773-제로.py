@@ -1,3 +1,6 @@
+import sys
+input = sys.stdin.read
+
 K = int(input())
 
 stack = []
