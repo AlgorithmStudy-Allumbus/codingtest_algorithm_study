@@ -20,11 +20,12 @@ while start <= end:
             count += 1 # 블루레이 개수 증가
             total = 0 # 블루레이에 담은 강의 길이 초기화
         total += t # 블루레이에 강의 추가
-        
-        if count <= M: 
-            answer = mid # 가능한 블루레이 크기 저장
-            end = mid - 1 
-        else: 
-            start = mid + 1 
+    
+    # 블루레이 개수를 확인하고 이진탐색 범위 조정
+    if count <= M: 
+        answer = mid # 가능한 블루레이 크기 저장
+        end = mid - 1 
+    else: 
+        start = mid + 1 
 
 print(answer)
