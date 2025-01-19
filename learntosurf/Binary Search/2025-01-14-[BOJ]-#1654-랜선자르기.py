@@ -4,6 +4,7 @@ input = sys.stdin.readline
 K, N = map(int, input().split())
 lan = [int(input()) for _ in range(K)]
 
+# 탐색 대상: 랜선의 길이
 start = 1 
 end = max(lan)
 
