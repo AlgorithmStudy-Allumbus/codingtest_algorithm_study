@@ -1,3 +1,9 @@
+'''
+BOJ #1253. 좋다 (골드4)
+https://www.acmicpc.net/problem/1253
+유형: Two-Pointer
+'''
+
 import sys
 input = sys.stdin.readline
 
