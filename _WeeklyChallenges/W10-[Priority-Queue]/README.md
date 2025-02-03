@@ -6,6 +6,8 @@
 - PDF: [바로가기
 ](./Study_BOJ_1202.pdf)
 
+<img width="500" alt="스터디문제" src="https://github.com/user-attachments/assets/96863997-1cfd-454b-b1b0-634606cc4108" /> <img width="500" alt="발제문제" src="https://github.com/user-attachments/assets/10717940-e761-4a5c-8cf0-e75935d84633" />
+
 ### 📖 문제
 - [백준 #1202. 보석 도둑](https://www.acmicpc.net/problem/1202): Priority Queue, 자료구조 / 골드2
 - 정답 코드: [Study_BOJ_1202_보석도둑.py](./Study_BOJ_1202_보석도둑.py)
