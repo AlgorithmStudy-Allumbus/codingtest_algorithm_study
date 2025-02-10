@@ -1,12 +1,3 @@
-'''
-BOJ #19638. 센티와 마법의 뿅망치 (실버1)
-https://www.acmicpc.net/problem/19638
-유형: Priority Queue, Data Structure
-'''
-
-'''
-풀이1
-'''
 import sys
 import heapq
 
@@ -43,27 +34,3 @@ else:
         print(f"YES\n{cnt}")
     else:
         print(f"NO\n{tallest_after}")
-
-'''
-풀이2 (최적화된 풀이로, heapreplace()를 사용하여 heappop()과 heappush()를 한 번의 연산으로 처리함)
-출처: https://velog.io/@hygge/Python-%EB%B0%B1%EC%A4%80-19638-%EC%84%BC%ED%8B%B0%EC%99%80-%EB%A7%88%EB%B2%95%EC%9D%98-%EB%BF%85%EB%A7%9D%EC%B9%98-Heapq
-'''
-import sys, heapq
-input = sys.stdin.readline
-
-n, h, t = map(int, input().split())
-giants = [-int(input()) for _ in range(n)]
-heapq.heapify(giants)
-cnt = 0
-
-for i in range(t):
-    if -giants[0] == 1 or -giants[0] < h:
-        break
-    else:
-        heapq.heapreplace(giants, -(-giants[0] // 2))
-        cnt += 1
-
-if -giants[0] >= h:
-    print('NO', -giants[0], sep='\n')
-else:
-    print('YES', cnt, sep='\n')
