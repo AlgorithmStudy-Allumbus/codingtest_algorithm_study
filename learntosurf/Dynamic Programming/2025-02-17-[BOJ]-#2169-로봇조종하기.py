@@ -32,5 +32,4 @@ for i in range(1, N):
     for j in range(M):
         dp[i][j] = max(left_to_right[j], right_to_left[j])
 
-# 정답 출력
 print(dp[N-1][M-1]) # 마지막 위치에 저장된 값이 탐사한 지역 가치 합의 최대값
