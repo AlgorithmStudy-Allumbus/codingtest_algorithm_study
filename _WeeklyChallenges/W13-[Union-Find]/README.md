@@ -6,9 +6,11 @@
 - PDF: [바로가기
 ](./Study_BOJ_1976.pdf)
 
-[//]: # (<img width="500" alt="스터디문제" src="https://github.com/user-attachments/assets/96863997-1cfd-454b-b1b0-634606cc4108" />)
+<img width="500" alt="스터디문제" src="https://github.com/user-attachments/assets/3b9fa584-776b-4e6a-a9bd-f788f6cfd19f" />
+<img width="500" alt="스터디문제" src="https://github.com/user-attachments/assets/80d0415b-034e-484e-849f-34457b8c543b" />
+<img width="500" alt="발제문제" src="https://github.com/user-attachments/assets/e7136d73-179c-4540-8380-88181c5c3fd7" />
 
-[//]: # (<img width="500" alt="발제문제" src="https://github.com/user-attachments/assets/10717940-e761-4a5c-8cf0-e75935d84633" />)
+
 
 ### 📖 문제
 - [백준 #1976. 여행 가자](https://www.acmicpc.net/problem/1976): Union-Find / 골드4
