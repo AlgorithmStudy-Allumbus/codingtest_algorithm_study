@@ -1,60 +1,40 @@
-'''
-3 > 도시의 수 N
-3 > 여행 계획에 속한 도시의 수 M
-
-> NxN 행렬 (N개의 줄에 N개의 정수) 
-0 1 0 1번 도시는 2번 도시와 연결
-1 0 1 2번 도시는 1,3번 도시와 연결
-0 1 0 3번 도시는 2번 도시와 연결
-
-i 번째 줄의 j번째 수 (i, j)는 i번째 도시에서 j번째 도시의 연결 정보 (i-j)
--> (i, j) = (j, i) 
-1이면 연결, 0이면 연결 X
-같은 도시 여러번 방문 가능 
-
-1 2 3 > 여행 계획 (1번->2번->3번)
-1-2-3 => 모두 연결되어 있어서 YES
-'''
-
 import sys 
 input = sys.stdin.readline
 
 N = int(input().strip()) # 도시의 수 
 M = int(input().strip()) # 여행 계획에 속한 도시의 수
 
-# 도시의 연결 정보 
-graph = []
-for _ in range(N):
-    graph.append(list(map(int, input().split()))) # NxN 행렬
+# 유니온 파인드 부모 배열
+parent = [i for i in range(N)]  
 
-plan = list(map(int, input().split())) # 여행 계획 
+# find 연산: 경로 압축을 이용하여 루트 노드 찾기
+def find(x):
+    if parent[x] != x:
+        parent[x] = find(parent[x])
+    return parent[x]
 
-'''
-그래서 어떻게..??
-여행계획에 속한 도시들이 모두 연결되어있는지를 확인 
--> 첫번째 도시에서 출발해서 다음 도시로 이동하는지 하나씩 확인..?
-'''
-def travel():
-    for i in range(M-1): # (M-1)번 반복하면서 현재 도시에서 다음 도시로 이동 가능 여부 확인 
-        current_city = plan[i]-1 # 현재 도시
-        next_city = plan[i+1]-1 # 다음 도시
-        
-        if graph[current_city][next_city] == 0: # 이동할 수 없는 경우 
-            return 'NO'
-    
-    return 'YES'
+# union 연산: 두 집합을 합치기
+def union(x, y):
+    root_x = find(x)
+    root_y = find(y)
+    if root_x != root_y:
+        parent[root_y] = root_x  # y의 루트를 x로 연결
 
-print(travel())
-'''
-아 이렇게 하면 근데 경유 하는 경우 고려를 못함.. 아 아닌가/?
-4
-3
-0 0 1 0 
-0 0 0 1
-1 0 0 0 
-0 1 0 0
-1 2 4
-일때 No 
+# 도시 연결 정보 처리
+for i in range(N):
+    row = list(map(int, input().split()))
+    for j in range(N):
+        if row[j] == 1:  # 두 도시가 연결된 경우
+            union(i, j)
 
-여러번 방문이 가능
-'''
+# 여행 계획 입력
+plan = list(map(int, input().split()))
+
+# 여행 경로가 같은 집합인지 확인
+root = find(plan[0] - 1)  # 첫 번째 도시의 루트
+for city in plan[1:]:
+    if find(city - 1) != root:
+        print("NO")
+        exit()
+
+print("YES")
