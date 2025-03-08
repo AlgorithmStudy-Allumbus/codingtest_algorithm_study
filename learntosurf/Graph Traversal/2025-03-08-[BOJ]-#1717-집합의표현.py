@@ -5,6 +5,7 @@ sys.setrecursionlimit(10**6)
 n, m = map(int, input().split())
 parent = [i for i in range(n + 1)]
 rank = [0] * (n + 1)  # 트리 깊이 관리
+
 result = []
 
 def find(x):
