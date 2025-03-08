@@ -1,9 +1,3 @@
-'''
-BOJ #1717. 집합의 표현 (골드5)
-https://www.acmicpc.net/problem/1717
-유형: Union-Find, Graph
-'''
-
 import sys
 sys.setrecursionlimit(10 ** 6)  # 재귀 깊이 제한 늘리기
 input = sys.stdin.readline
