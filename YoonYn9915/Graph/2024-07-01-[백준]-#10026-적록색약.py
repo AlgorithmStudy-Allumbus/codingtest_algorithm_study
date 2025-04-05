@@ -1,68 +1,59 @@
 from collections import deque
 
-# 2차원 배열을 이용한 bfs 구현
-def bfs(x, y):
-
-    # 2차원 배열에서 현재 노드의 상하좌우를 검사하기 위한 dx와 dy
-    dx = [0, -1, 0, 1]
-    dy = [-1, 0, 1, 0]
-
-    # queue를 이용한 bfs 그래프 탐색
-    queue.append((x, y))
-    visited[x][y] = 1
+dx = [-1, 1, 0, 0]
+dy = [0, 0, -1, 1]
 
 
-    while queue:
-        (x, y) = queue.popleft()
+def bfs(graph, visited):
+    border = 0
+    queue = deque()
 
-        # queue에서 pop한 현재 노드를 기준으로 상하좌우 탐색
-        for k in range(4):
-            row = x + dx[k]
-            col = y + dy[k]
+    # 영역 개수 계산
+    for i in range(1, N + 1):
+        for j in range(1, N + 1):
+            # 현재 칸을 아직 방문하지 않았다면 현재 칸부터 bfs 탐색 시작
+            if visited[i][j] == 0:
+                # 영역 개수 한 개 증가
+                border += 1
+                queue.append((i, j))
 
-            # 탐색 조건
-            # 1. 현재 노드가 배열의 인덱스 범위 안인지 0 <= x < n and 0 <= y < n
-            # 2. 같은 색인지
-            # 3. 방문하지 않았는지
-            if 0 <= row < n and 0 <= col < n:
-                if arr[x][y] == arr[row][col] and visited[row][col] == 0:
-                    queue.append((row, col))
-                    visited[row][col] = 1
+                while queue:
+                    (x, y) = queue.popleft()
+                    # 방문처리
+                    visited[x][y] = 1
 
+                    # 상하좌우 인접한 칸으로 이동
+                    for k in range(4):
+                        nx = x + dx[k]
+                        ny = y + dy[k]
 
-# 초기값 세팅
-n = int(input())
-visited = [[0] * n for _ in range(n)]
-arr = [list(input()) for _ in range(n)]
-queue = deque()
+                        # 칸이 보드 밖으로 넘어가지 않았는지,인접한 칸이 같은 색인지,아직 방문하지 않았는지 확인
+                        if (1 <= nx <= N and 1 <= ny <= N) and graph[x][y] == graph[nx][ny] and visited[nx][ny] == 0:
+                            # 해당 칸 방문처리
+                            queue.append((nx, ny))
+                            visited[nx][ny] = 1
 
-# 적록색약이 아닌 경우의 답
-answerForNormal = 0
-
-# 적록색약인 경우의 답
-answerForColorBlindness = 0
-
-
-# 적록색약이 아닌 경우
-for i in range(n):
-    for j in range(n):
-        if visited[i][j] == 0:
-            bfs(i, j)
-            answerForNormal += 1
+    return border
 
 
-# 적록색약인 경우 R과 G는 같으므로
+# 입력받기
+N = int(input())
+graph = [[0] * (N + 1)]
+visited = [[0] * (N + 1) for _ in range(N + 1)]
 
-for i in range(n):
-    for j in range(n):
-        if arr[i][j] == 'G':
-            arr[i][j] = 'R'
+for _ in range(N):
+    graph.append([0] + list(input()))
 
-visited = [[0] * n for _ in range(n)]
-for i in range(n):
-    for j in range(n):
-        if not visited[i][j]:
-            bfs(i,j)
-            answerForColorBlindness += 1
+# 정상인이 보는 영역 개수 반환
+num_of_normal = bfs(graph, visited)
 
-print(answerForNormal, answerForColorBlindness)
+# 적록색약이 보는 영역 개수 반환 적록색약은 R,G를 구분하지 못하므로 모든 R을 G로 변환
+for i in range(1, N + 1):
+    for j in range(1, N + 1):
+        if graph[i][j] == 'R':
+            graph[i][j] = 'G'
+
+visited = [[0] * (N + 1) for _ in range(N + 1)]
+num_of_abnormal = bfs(graph, visited)
+
+print(f"{num_of_normal} {num_of_abnormal}")
