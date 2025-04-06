@@ -1,1 +1,16 @@
-{}
+{
+  "month": "2025-04",
+  "users": {
+    "Mingguriguri": {
+      "그래프": [],
+      "DP": [
+        2169,
+        1520
+      ],
+      "achieved": {
+        "그래프": false,
+        "DP": false
+      }
+    }
+  }
+}
