@@ -30,6 +30,7 @@ jobs:
       - name: Run update_dashboard.py
         working-directory: _MonthlyChallenges
         run: python update_dashboard.py
+          git push https://x-access-token:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/AlgorithmStudy-Allumbus/codingtest_algorithm_study.git ${{ github.head_ref }}
 
       - name: Commit updated files
         working-directory: _MonthlyChallenges
