@@ -62,16 +62,18 @@ def main():
             continue
 
         print(f"username: {username}, algorithm: {algorithm}, problem_id: {problem_id}")
-
+        print(f"users: {users}")
         # 챌린지 유형에 포함되어 있는지 확인 (예: "그래프", "DP")
         if algorithm not in CHALLENGE_TYPES:
             continue  # 챌린지 대상이 아니면 무시
 
         # 사용자의 기록이 없으면 초기화
+        print("사용자의 기록이 없으면 초기화")
         if username not in users:
-            scoreboard[username] = initialize_user()
+            users[username] = initialize_user()
 
         # 해당 유형 문제 번호를 중복 없이 추가
+        print("해당 유형 문제 번호를 중복 없이 추가")
         if problem_id not in users[username].get(algorithm, []):
             users[username][algorithm].append(problem_id)
 
