@@ -1,0 +1,59 @@
+name: Update Challenge Progress
+
+on:
+  pull_request:
+    types: [opened, edited, reopened]
+
+jobs:
+  update_progress:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Run extract_pr_data.py
+        working-directory: _MonthlyChallenges
+        run: python extract_pr_data.py
+
+      - name: Run update_scoreboard.py
+        working-directory: _MonthlyChallenges
+        run: python update_scoreboard.py
+
+      - name: Run update_dashboard.py
+        working-directory: _MonthlyChallenges
+        run: python update_dashboard.py
+
+      - name: Commit updated files
+        working-directory: _MonthlyChallenges
+        run: |
+          git config --global user.name "${{ secrets.GIT_USER_NAME }}"
+          git config --global user.email "${{ secrets.GIT_USER_EMAIL }}"
+          git add scoreboard.json DASHBOARD.md HISTORY.md
+          git commit -m "Update challenge progress dashboard" || echo "No changes to commit"
+          git push origin ${{ github.head_ref }}
+
+      - name: Post PR Comment with progress
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            // DASHBOARD.md 파일에서 내용 읽어오기 (working-directory에 따라 경로 조정)
+            const dashboard = fs.readFileSync('_MonthlyChallenges/DASHBOARD.md', 'utf8');
+            // PR 이벤트에서 PR 번호 가져오기
+            const prNumber = context.payload.pull_request.number;
+            // GitHub REST API를 통해 코멘트 생성
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+              body: dashboard
+            });
