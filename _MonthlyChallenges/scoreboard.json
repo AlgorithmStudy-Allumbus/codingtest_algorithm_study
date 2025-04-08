@@ -25,6 +25,18 @@
         "그래프": false,
         "DP": false
       }
+    },
+    "learntosurf": {
+      "그래프": [],
+      "DP": [
+        14430,
+        2342,
+        2293
+      ],
+      "achieved": {
+        "그래프": false,
+        "DP": false
+      }
     }
   }
 }

@@ -6,3 +6,5 @@
 | Mingguriguri | DP | 5 | ✅ |
 | zaqquum | 그래프 | 0 | ❌ |
 | zaqquum | DP | 2 | ❌ |
+| learntosurf | 그래프 | 0 | ❌ |
+| learntosurf | DP | 3 | ❌ |
