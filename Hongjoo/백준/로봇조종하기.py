@@ -10,7 +10,6 @@ fields =list()
 for n in range(N) :
   fields.append(list(map(int, input().split())))
 
-# print(fields)
 # 2. dp 테이블 초기화 
 dp = [[0 for _ in range(M)] for k in range(N)]
 left2right = [[0 for _ in range(M)] for k in range(N)]
