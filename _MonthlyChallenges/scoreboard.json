@@ -14,6 +14,17 @@
         "그래프": false,
         "DP": true
       }
+    },
+    "zaqquum": {
+      "그래프": [],
+      "DP": [
+        2169,
+        1520
+      ],
+      "achieved": {
+        "그래프": false,
+        "DP": false
+      }
     }
   }
 }
