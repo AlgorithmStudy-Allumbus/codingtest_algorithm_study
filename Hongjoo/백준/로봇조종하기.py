@@ -1,9 +1,9 @@
 """
-https://www.acmicpc.net/problem/1520
+https://www.acmicpc.net/problem/1520 
 """
-
 import sys
 input = sys.stdin.readline
+
 #0. 맵 (N,M) 칸 별 탐사 가치 설정
 N , M = map(int,input().split()) # y,x 
 fields =list()
