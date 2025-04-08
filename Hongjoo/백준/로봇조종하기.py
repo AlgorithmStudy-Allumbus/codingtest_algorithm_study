@@ -16,7 +16,7 @@ left2right = [[0 for _ in range(M)] for k in range(N)]
 right2left = [[0 for _ in range(M)] for k in range(N)]
 #3.탐색 가능  (1)left2 right <-/ (2) right2left <- 
 
- # n == 0 경우 : (1) left2right 경로만 존재(누적값)
+# n == 0 경우 : (1) left2right 경로만 존재(누적값)
 for m in range(M) :
   dp[0][m] = dp[0][m-1] + fields[0][m] 
 # 2번쨰 행 부터 진행 
