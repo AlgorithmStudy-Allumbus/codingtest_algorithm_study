@@ -2,16 +2,18 @@ name: Update Challenge Progress
 
 on:
   pull_request:
-    types: [opened, edited, reopened]
+    types:
+      - closed
 
 jobs:
   update_progress:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
         with:
-          ref: ${{ github.head_ref }}
+          ref: main
           fetch-depth: 0
 
       - name: Set up Python
@@ -43,7 +45,7 @@ jobs:
           cd _MonthlyChallenges
           git add scoreboard.json DASHBOARD.md HISTORY.md
           git commit -m "Update challenge progress dashboard" || echo "No changes to commit"
-          git push origin ${{ github.head_ref }}
+          git push origin main
 
       - name: Post PR Comment with progress
         if: github.event_name == 'pull_request'
