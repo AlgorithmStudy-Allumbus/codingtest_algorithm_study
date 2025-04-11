@@ -12,36 +12,30 @@ CHALLENGE_TYPES = {
 }
 
 def generate_dashboard(scoreboard):
-    # scoreboard 구조 예시 (새로운 형식):
-    # {
-    #   "month": "2023-04",
-    #   "users": {
-    #       "user1": {
-    #           "그래프": [101, 102],
-    #           "DP": [2169, 1520],
-    #           "achieved": {
-    #               "그래프": true,
-    #               "DP": false
-    #           }
-    #       },
-    #       "user2": { ... }
-    #   }
-    # }
+    """
+    # 🔥{month} 챌린지 진행 상황
+
+    ### 👉그래프
+    - **{user}**: {count}개 {achieved_str}
+
+    ### 👉DP
+    - **{user}**: {count}개 {achieved_str}
+    """
     month = scoreboard.get("month", "Unknown")
     users = scoreboard.get("users", {})
 
-    md = f"# {month} 챌린지 진행 상황\n\n"
-    md += "| 사용자 | 챌린지 유형 | 문제 수 | 달성 여부 |\n"
-    md += "| ------ | ----------- | ------- | --------- |\n"
+    # 월 챌린지 헤더 추가
+    md = f"# 🔥{month} 챌린지 진행 상황\n\n"
 
-    # 각 사용자별 진행 상황 표 작성
-    for user, data in users.items():
-        for ctype in CHALLENGE_TYPES.keys():
+    # 각 챌린지 유형별 섹션 생성
+    for ctype in CHALLENGE_TYPES.keys():
+        md += f"### 👉 {ctype}\n"
+        for user, data in users.items():
             count = len(data.get(ctype, []))
             achieved = data.get("achieved", {}).get(ctype, False)
             achieved_str = "✅" if achieved else "❌"
-            md += f"| {user} | {ctype} | {count} | {achieved_str} |\n"
-
+            md += f"- **{user}**: {count}개 {achieved_str}\n"
+        md += "\n\n"
     return md
 
 def archive_current_month(scoreboard):
