@@ -3,12 +3,12 @@
 ### 👉 그래프
 - **Mingguriguri**: 5개 ✅
 - **zaqquum**: 0개 ❌
-- **learntosurf**: 2개 ❌
+- **learntosurf**: 5개 ✅
 
 
 ### 👉 DP
 - **Mingguriguri**: 6개 ✅
 - **zaqquum**: 2개 ❌
-- **learntosurf**: 3개 ❌
+- **learntosurf**: 6개 ✅
 
 
