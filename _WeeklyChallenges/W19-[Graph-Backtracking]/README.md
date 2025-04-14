@@ -8,9 +8,10 @@
 - PDF: [바로가기
 ](Study_BOJ_1759.pdf)
 
-<img width="500" alt="스터디문제" src="https://github.com/user-attachments/assets/80d0415b-034e-484e-849f-34457b8c543b" />
-<img width="500" alt="발제문제" src="https://github.com/user-attachments/assets/e7136d73-179c-4540-8380-88181c5c3fd7" />
+<img width="500" alt="스터디문제" src="https://github.com/user-attachments/assets/eb885f83-a297-4c82-b2b7-62341207eaa9" />
+<img width="500" alt="발제문제" src="https://github.com/user-attachments/assets/74021e9a-844a-4410-97da-1938f4fc8423" />
 
+<img width="1667" alt="스크린샷 2025-04-14 오후 11 44 21" src="" />
 
 ### 📖 문제
 - [백준 #1759. 암호만들기](https://www.acmicpc.net/problem/1759): Graph (Backgracking) / 골드1
