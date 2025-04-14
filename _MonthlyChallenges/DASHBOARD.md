@@ -3,10 +3,12 @@
 ### 👉 그래프
 - **YoonYn9915**: 0개 ❌
 - **Mingguriguri**: 0개 ❌
+- **zaqquum**: 3개 ❌
 
 
 ### 👉 DP
 - **YoonYn9915**: 2개 ❌
 - **Mingguriguri**: 4개 ❌
+- **zaqquum**: 1개 ❌
 
 
