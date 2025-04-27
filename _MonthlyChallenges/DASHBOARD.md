@@ -4,11 +4,13 @@
 - **YoonYn9915**: 1개 ❌
 - **Mingguriguri**: 2개 ❌
 - **zaqquum**: 4개 ❌
+- **learntosurf**: 3개 ❌
 
 
 ### 👉 DP
 - **YoonYn9915**: 2개 ❌
 - **Mingguriguri**: 6개 ✅
 - **zaqquum**: 4개 ❌
+- **learntosurf**: 0개 ❌
 
 
