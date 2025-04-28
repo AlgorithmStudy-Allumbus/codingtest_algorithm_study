@@ -2,7 +2,7 @@
 
 ### 👉 그래프
 - **YoonYn9915**: 1개 ❌
-- **Mingguriguri**: 2개 ❌
+- **Mingguriguri**: 3개 ❌
 - **zaqquum**: 4개 ❌
 - **learntosurf**: 3개 ❌
 
