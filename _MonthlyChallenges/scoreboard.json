@@ -45,11 +45,12 @@
         10844,
         2159,
         17484,
-        17271
+        17271,
+        28069
       ],
       "achieved": {
         "그래프": false,
-        "DP": false
+        "DP": true
       }
     },
     "learntosurf": {

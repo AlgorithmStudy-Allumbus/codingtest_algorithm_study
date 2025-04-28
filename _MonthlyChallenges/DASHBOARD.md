@@ -10,7 +10,7 @@
 ### 👉 DP
 - **YoonYn9915**: 3개 ❌
 - **Mingguriguri**: 6개 ✅
-- **zaqquum**: 4개 ❌
+- **zaqquum**: 5개 ✅
 - **learntosurf**: 0개 ❌
 
 
