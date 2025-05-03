@@ -38,24 +38,37 @@ def generate_dashboard(scoreboard):
         md += "\n\n"
     return md
 
-def archive_current_month(scoreboard):
-    # HISTORY_FILE에 현재 달 기록을 추가 (append 방식)
-    dashboard_md = generate_dashboard(scoreboard)
+def archive_current_month():
+    """
+    HISTORY_FILE에 현재 달 기록을 추가 (append 방식)
+    """
+    # 1. DASHBOARD.md 읽기
+    try:
+        with open(DASHBOARD_FILE, "r", encoding="utf-8") as db:
+            dashboard_md = db.read()
+    except FileNotFoundError:
+        print("[Archive] DASHBOARD.md not found. Please create DASHBOARD.md first.")
+        return
+
+    # 2. HISTORY.md에 append
     with open(HISTORY_FILE, "a", encoding="utf-8") as f:
         f.write(dashboard_md)
-        f.write("\n\n")  # 구분을 위한 빈 줄 추가
-    print("HISTORY.md 업데이트 완료!")
+        f.write("\n\n")  # 구분용 빈 줄
+    print("[Archive] Appended current dashboard to HISTORY.md successfully.")
 
 def update_dashboard():
     # 1. scoreboard.json 로드
+    print("[Step 1] Loading scoreboard file...")
     if not os.path.exists(SCOREBOARD_FILE):
-        print(f"{SCOREBOARD_FILE} 파일이 없습니다.")
+        print(f"[Step 1] File not found: {SCOREBOARD_FILE}")
         return
 
     with open(SCOREBOARD_FILE, "r", encoding="utf-8") as f:
         scoreboard = json.load(f)
+    print("[Step 1] Loaded scoreboard data.")
 
     # 2. 기존 파일 구조가 새 형식("month", "users")이 아니라면 변환
+    print("[Step 2] Verifying scoreboard structure...")
     if "month" not in scoreboard or "users" not in scoreboard:
         # 기존 구조는 사용자 이름이 최상위 키인 형태
         scoreboard = {
@@ -65,30 +78,15 @@ def update_dashboard():
         # 새 형식으로 저장
         with open(SCOREBOARD_FILE, "w", encoding="utf-8") as f:
             json.dump(scoreboard, f, ensure_ascii=False, indent=2)
-        print("기존 scoreboard 형식을 새 구조로 변환하였습니다.")
+        print("[Step 2] Converted existing scoreboard format to new structure.")
 
-    # 3. 현재 달 확인 및 월 초기화 처리
-    current_month = datetime.now().strftime("%Y-%m")
-    stored_month = scoreboard.get("month", current_month)
-    print(f"현재 달: {current_month}, 저장된 달: {stored_month}")
-
-    if stored_month != current_month:
-        print(f"새로운 달({current_month})로 넘어감 - 이전 달({stored_month}) 기록을 히스토리에 저장합니다.")
-        archive_current_month(scoreboard)
-        # scoreboard 초기화: users는 빈 dict, month는 현재 달로 갱신
-        scoreboard = {
-            "month": current_month,
-            "users": {}
-        }
-        with open(SCOREBOARD_FILE, "w", encoding="utf-8") as f:
-            json.dump(scoreboard, f, ensure_ascii=False, indent=2)
-
-    # 4. DASHBOARD.md 파일 생성 및 업데이트
+    # 3. DASHBOARD.md 파일 생성 및 업데이트
+    print("[Step 3] Generating dashboard content...")
     md_content = generate_dashboard(scoreboard)
     with open(DASHBOARD_FILE, "w", encoding="utf-8") as f:
         f.write(md_content)
 
-    print("DASHBOARD.md 업데이트 완료!")
+    print("[Step 3] DASHBOARD.md updated successfully.")
 
 if __name__ == '__main__':
     update_dashboard()
