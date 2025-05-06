@@ -11,6 +11,17 @@
         "그래프": false,
         "DP": false
       }
+    },
+    "Mingguriguri": {
+      "그래프": [
+        2178,
+        2667
+      ],
+      "DP": [],
+      "achieved": {
+        "그래프": false,
+        "DP": false
+      }
     }
   }
 }
