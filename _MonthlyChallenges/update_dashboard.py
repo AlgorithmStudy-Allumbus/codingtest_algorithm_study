@@ -8,7 +8,7 @@ HISTORY_FILE = "HISTORY.md"
 
 CHALLENGE_TYPES = {
     "그래프": 5,
-    "DP": 5
+    "구현": 5
 }
 
 def generate_dashboard(scoreboard):
