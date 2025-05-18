@@ -9,7 +9,8 @@
       ],
       "achieved": {
         "그래프": false,
-        "DP": false
+        "DP": false,
+        "구현": false
       }
     },
     "Mingguriguri": {
@@ -20,7 +21,8 @@
       "DP": [],
       "achieved": {
         "그래프": false,
-        "DP": false
+        "DP": false,
+        "구현": false
       }
     },
     "zaqquum": {
@@ -30,7 +32,8 @@
       "DP": [],
       "achieved": {
         "그래프": false,
-        "DP": false
+        "DP": false,
+        "구현": false
       }
     }
   }
