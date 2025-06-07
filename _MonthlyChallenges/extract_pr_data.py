@@ -20,6 +20,7 @@ def main():
     username = event_data['pull_request']['user']['login']
     created_at = event_data['pull_request']['created_at']
     print(f"pr_body: {pr_body}, pr_number: {pr_number}")
+    print(f"created_at: {created_at}")
 
     if pr_number is None:
         print("PR 번호를 찾을 수 없습니다.")
