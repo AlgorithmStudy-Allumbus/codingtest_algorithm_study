@@ -1,14 +1,43 @@
 {
-  "month": "2025-06",
+  "month": "2025-05",
   "users": {
     "YoonYn9915": {
       "그래프": [
-        11559
+        123,
+        456,
+        789
       ],
-      "구현": [],
+      "DP": [
+        1912,
+        1149
+      ],
       "achieved": {
         "그래프": false,
-        "구현": false
+        "DP": false
+      }
+    },
+    "Mingguriguri": {
+      "그래프": [
+        2178,
+        2667
+      ],
+      "DP": [
+        1234,
+        4568
+      ],
+      "achieved": {
+        "그래프": false,
+        "DP": false
+      }
+    },
+    "zaqquum": {
+      "그래프": [
+        169199
+      ],
+      "DP": [],
+      "achieved": {
+        "그래프": false,
+        "DP": false
       }
     }
   }
