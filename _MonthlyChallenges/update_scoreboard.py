@@ -48,12 +48,10 @@ def main():
     else:
         # 2-2. month 값이 다르면 현재 달로 덮어쓰기
         print("[Step 2.2] Checking month field...")
-        if scoreboard["month"] != current_month:
-            print(f"[Step 2.2] Month mismatch detected (previous: {scoreboard['month']}, current: {current_month}); archiving...")
-
+        if scoreboard["month"] is not None:  # month가 None이 아닌 경우에만 아카이브
+            print(f"[Step 2.2] Archiving previous month data: {scoreboard['month']}")
             archive_current_month()
             print("[Step 2.2] Archived previous month data to HISTORY.md")
-
             scoreboard["month"] = None  # PR 데이터에서 첫 번째 항목의 월을 사용할 것이므로 None으로 초기화
             scoreboard["users"] = {}  # 매달 유저값도 초기화
             print(f"[Step 2.2] Reset scoreboard for new month: {scoreboard!r}")
