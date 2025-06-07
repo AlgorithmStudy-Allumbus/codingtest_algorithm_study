@@ -21,9 +21,25 @@ def initialize_user():
     }
 
 def main():
-    # 현재 달 문자열
-    current_month = datetime.now().strftime("%Y-%m")
+    # 1. pr_data.json 파일 로드
+    print("[Step 3] Loading PR data file...")
+    if not os.path.exists(PR_DATA_FILE):
+        print(f"[Step 3] PR data file not found: {PR_DATA_FILE}")
+        exit(1)
 
+    with open(PR_DATA_FILE, 'r', encoding='utf-8') as f:
+        pr_data = json.load(f)
+
+    print(f"[Step 3] Loaded PR data: {pr_data!r}")
+    
+    # 현재 달 문자열
+     for entry in pr_data:
+        print(f"entry: {entry}")
+        current_month = entry["created_at"]
+    print(f"current_month: {current_month})
+    current_month = current_month.strftime("%Y-%m")
+    print(f"current_month: {current_month})
+    
     # 1. 기존 스코어보드 로드 (없으면 빈 dict로 초기화)
     print("[Step 1] Loading scoreboard file...")
     if os.path.exists(SCOREBOARD_FILE):
@@ -58,17 +74,6 @@ def main():
             print(f"[Step 2.2] Reset scoreboard for new month: {scoreboard!r}")
 
     users = scoreboard["users"]
-
-    # 3. pr_data.json 파일 로드
-    print("[Step 3] Loading PR data file...")
-    if not os.path.exists(PR_DATA_FILE):
-        print(f"[Step 3] PR data file not found: {PR_DATA_FILE}")
-        exit(1)
-
-    with open(PR_DATA_FILE, 'r', encoding='utf-8') as f:
-        pr_data = json.load(f)
-
-    print(f"[Step 3] Loaded PR data: {pr_data!r}")
 
     # 4. pr_data의 각 항목을 순회하며 사용자별 스코어보드 업데이트
     print("[Step 4] Processing PR data entries...")
