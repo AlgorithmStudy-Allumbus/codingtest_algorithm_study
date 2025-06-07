@@ -37,9 +37,9 @@ def main():
         current_month = entry["created_at"]
 
         print(f"current_month: {current_month}")
-        current_month = current_month.strftime("%Y-%m")
+        current_month = current_month[:7]
         print(f"current_month: {current_month}")
-              
+
     # 1. 기존 스코어보드 로드 (없으면 빈 dict로 초기화)
     print("[Step 1] Loading scoreboard file...")
     if os.path.exists(SCOREBOARD_FILE):
