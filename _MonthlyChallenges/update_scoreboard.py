@@ -20,10 +20,11 @@ def initialize_user():
         "achieved": {ctype: False for ctype in CHALLENGE_TYPES.keys()}
     }
 
-def main():
-    # 현재 달 문자열
-    current_month = datetime.now().strftime("%Y-%m")
+def get_month_from_date(date_str):
+    # ISO 형식의 날짜 문자열에서 YYYY-MM 형식의 월 문자열 추출
+    return datetime.fromisoformat(date_str.replace('Z', '+00:00')).strftime('%Y-%m')
 
+def main():
     # 1. 기존 스코어보드 로드 (없으면 빈 dict로 초기화)
     print("[Step 1] Loading scoreboard file...")
     if os.path.exists(SCOREBOARD_FILE):
@@ -41,7 +42,7 @@ def main():
     print("[Step 2.1] Verifying scoreboard structure...")
     if "users" not in scoreboard or "month" not in scoreboard:
         scoreboard = {
-            "month": current_month,
+            "month": None,  # PR 데이터에서 첫 번째 항목의 월을 사용할 것이므로 None으로 초기화
             "users": scoreboard  # 기존 scoreboard의 내용(사용자 데이터)이 있다면 여기에 넣음
         }
     else:
@@ -53,7 +54,7 @@ def main():
             archive_current_month()
             print("[Step 2.2] Archived previous month data to HISTORY.md")
 
-            scoreboard["month"] = current_month
+            scoreboard["month"] = None  # PR 데이터에서 첫 번째 항목의 월을 사용할 것이므로 None으로 초기화
             scoreboard["users"] = {}  # 매달 유저값도 초기화
             print(f"[Step 2.2] Reset scoreboard for new month: {scoreboard!r}")
 
@@ -76,8 +77,20 @@ def main():
         username = entry["username"]
         algorithm = entry["algorithm"]
         problem_id = entry["problem_id"]
+        created_at = entry["created_at"]
 
         if not username or not algorithm or problem_id is None:
+            continue
+
+        # PR 생성 날짜에서 월 추출
+        entry_month = get_month_from_date(created_at)
+        
+        # scoreboard의 month가 None이면 첫 번째 항목의 월로 설정
+        if scoreboard["month"] is None:
+            scoreboard["month"] = entry_month
+        # 월이 다르면 해당 항목은 건너뛰기
+        elif scoreboard["month"] != entry_month:
+            print(f"[Step 4] Skipping entry from different month: {entry_month}")
             continue
 
         print(f"[Step 4] Entry details -> user: {username}, algorithm: {algorithm}, problem_id: {problem_id}")
