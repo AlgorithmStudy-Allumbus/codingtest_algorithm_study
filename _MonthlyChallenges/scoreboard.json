@@ -11,11 +11,13 @@
       ],
       "구현": [
         25206,
-        10828
+        10828,
+        15905
       ],
       "achieved": {
         "그래프": true,
-        "구현": false
+        "구현": false,
+        "그리디": false
       }
     },
     "Mingguriguri": {
@@ -30,7 +32,8 @@
       ],
       "achieved": {
         "그래프": false,
-        "구현": false
+        "구현": false,
+        "그리디": false
       }
     },
     "zaqquum": {
@@ -51,7 +54,8 @@
       ],
       "achieved": {
         "그래프": true,
-        "구현": true
+        "구현": true,
+        "그리디": false
       }
     }
   }
