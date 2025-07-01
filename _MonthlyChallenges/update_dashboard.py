@@ -7,7 +7,7 @@ DASHBOARD_FILE = "DASHBOARD.md"
 HISTORY_FILE = "HISTORY.md"
 
 CHALLENGE_TYPES = {
-    "그래프": 5,
+    "그리디": 5,
     "구현": 5
 }
 
