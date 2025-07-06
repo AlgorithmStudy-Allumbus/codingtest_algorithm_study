@@ -4,6 +4,7 @@
 - if wait_que : 
     #우선순위 높은 순 부터 작업 할당
     우선순위 : [소요시간 short  , 요청시간이 fast , 번호가 작은 것]
+    
 - intercept 없음 
 - 같은 time 에 HD에 작업이 끝나는 시점 == 다른 작업 요청이 들어오는 시점일 경우, 
     HD 작업 종료 -> 바로 wait queue에서 ready queue로 할당
