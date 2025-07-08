@@ -9,7 +9,7 @@ PR_DATA_FILE = "pr_data.json"
 
 # 챌린지 설정 (매달 투표 결과로 정해진 유형과 목표 문제 수)
 CHALLENGE_TYPES = {
-    "그래프": 5,
+    "그리디": 5,
     "구현": 5
 }
 
