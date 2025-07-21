@@ -26,8 +26,8 @@
         17679
       ], 
       "achieved": {
-        "그리디": False, 
-        "구현": False
+        "그리디": false, 
+        "구현": false
       }
     }
   }
