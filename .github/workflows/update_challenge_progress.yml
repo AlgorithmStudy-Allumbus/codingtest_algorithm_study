@@ -43,6 +43,7 @@ jobs:
       - name: Commit updated files
         run: |
           cd _MonthlyChallenges
+          git pull origin main --rebase
           git add scoreboard.json DASHBOARD.md HISTORY.md
           git commit -m "Update challenge progress dashboard" || echo "No changes to commit"
           git push origin main
