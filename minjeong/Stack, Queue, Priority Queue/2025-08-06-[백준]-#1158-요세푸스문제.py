@@ -8,7 +8,7 @@ people = deque([i+1 for i in range(N)])
 answer = [] # 제거된 순서를 저장할 리스트
 
 while people:
-		# K-1번 앞의 원소를 빼서 뒤로 보냄 (원형 이동)
+    # K-1번 앞의 원소를 빼서 뒤로 보냄 (원형 이동)
     for _ in range(K-1):
         cur = people.popleft()
         people.append(cur)
