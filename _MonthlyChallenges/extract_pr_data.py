@@ -18,7 +18,9 @@ def main():
     pr_body = event_data['pull_request']['body']
     pr_number = event_data['pull_request']['number']
     username = event_data['pull_request']['user']['login']
+    created_at = event_data['pull_request']['created_at']
     print(f"pr_body: {pr_body}, pr_number: {pr_number}")
+    print(f"created_at: {created_at}")
 
     if pr_number is None:
         print("PR 번호를 찾을 수 없습니다.")
@@ -54,6 +56,7 @@ def main():
                     entry['problem_id'] = int(entry.pop("id"))
                     entry['pr_number'] = pr_number
                     entry['username'] = username
+                    entry['created_at'] = created_at
                     # 공백 제거
                     entry['algorithm'] = entry['algorithm'].strip()
                     entry['difficulty'] = entry['difficulty'].strip()
